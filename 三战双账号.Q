@@ -9,7 +9,7 @@ StopHotkeyMod=0
 RunOnce=1
 EnableWindow=
 MacroID=3ec9cbb2-c042-4262-bf9d-c01aeae198a4
-Description=三战双账户操作
+Description=双账户操作
 Enable=1
 AutoRun=0
 [Repeat]
@@ -244,7 +244,7 @@ End Sub
 
 Sub 配置游戏窗口
 
-	dm_ret = dm.SetWindowSize(hwnd,1200,800)
+	dm_ret = dm.SetWindowSize(hwnd,720,600)
 	dm_ret = dm.GetWindowRect(hwnd, x1, y1, x2, y2)
 	TracePrint "x1 ==" & x1
 	TracePrint "y1 ==" & y1
@@ -255,7 +255,22 @@ Sub 配置游戏窗口
 	TracePrint "gScreenW ==" & gScreenW
 	TracePrint "gScreenH ==" & gScreenH
 	
-	dm.MoveWindow hwnd,-10,-30
+	dm.MoveWindow hwnd, 0 , 0
+	
+	dm_ret2 = dm2.SetWindowSize(hwnd2,720,600)
+	dm_ret2 = dm2.GetWindowRect(hwnd2, x1, y1, x2, y2)
+	TracePrint "x1 ==" & x1
+	TracePrint "y1 ==" & y1
+	TracePrint "x2 ==" & x2
+	TracePrint "y2 ==" & y2
+	gScreenW = x2-x1
+	gScreenH = y2-y1
+	TracePrint "gScreenW ==" & gScreenW
+	TracePrint "gScreenH ==" & gScreenH
+	
+	dm2.MoveWindow hwnd2, 720 , 0 
+	
+	
 End Sub
 
 
@@ -535,6 +550,110 @@ Sub main
 //	
 //	清理缓存文件
 	
+	Do 
+	
+		日常循环
+	
+	Loop
 	
 End Sub
 	
+	
+Sub 日常循环
+	If 当前任务 = "新手引导" Then 
+			新手引导 
+			
+	End If
+	
+//	If 当前任务 = "升级建筑" Then
+//		升级建筑
+//	End If
+//	
+//	If 当前任务 = "自动铺路" Then
+//		新自动铺路 
+//	End If
+//	
+//	
+//	If 当前任务 = "扫荡" Then 
+//		
+//			For i=0 to 扫荡次数 step 1
+//				
+//				补兵 
+//				Delay 5000
+//				TracePrint "开始扫荡循环"
+//				扫荡 扫荡目标
+//				Delay 扫荡行军时间 * 1500
+//				
+//			Next
+//			
+//	End If
+//	
+//	If 当前任务 = "放弃土地" Then
+//		去放弃铺路土地 
+//	End If
+	
+	
+	
+//	If 当前任务 = "延时占领" Then 
+//		For 10
+//			延时占领 
+//		Next
+//	End If
+//	
+//	
+//	If 当前任务 = "日常模式" Then 
+//		日常主线程
+//	End If
+//	
+//	
+//	If 当前任务 = "命令模式" Then 
+//		命令模式
+//	End If
+//	
+//	If 当前任务 = "单兵碰瓷" Then 
+//		单兵碰瓷模式
+//	End If
+//	
+//	
+//	If 当前任务 = "自动征兵" Then 
+//		全力征兵
+//	End If
+	
+	If 当前任务 = "自动招募" Then 
+		跳转回主界面
+		自动免费招募
+		自动半价招募
+	End If
+	
+	
+	
+//	TracePrint "6秒后重新开始任务"
+//	If 当前任务 = "新手引导" Then 
+//		
+//		Else 
+//			当前轮询数 = 当前轮询数 + 1
+//			当前任务=任务列表(当前轮询数 mod 任务轮询数)
+//	End If
+//	TracePrint "下次任务是 " & 当前任务
+	
+	Delay 600000
+	
+End Sub
+
+
+
+Sub 新手引导
+	
+End Sub
+
+Sub 跳转回主界面 
+	
+End Sub
+
+Sub 自动免费招募
+	
+End Sub
+
+Sub 自动半价招募
+	
+End Sub
